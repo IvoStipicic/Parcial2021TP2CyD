@@ -19,4 +19,12 @@ const beers = [
     { name: 'Belgian Wit', abv: 5.4, label: 'https://s3.amazonaws.com/brewerydbapi/beer/3CvVQG/upload_xOMnlK-large.png', type: 'Wheat' },
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
-
+const newLabel = "https://tecnoshare.sharepoint.com/sites/beer/";
+function setLabel(beers){
+  return beers
+    .map(beer => {
+      beer.laber = newLabel + beer.label.split("/").splice(5,1) +"/"+beer.name.replace(" ", "-")+".png"
+    })
+}
+setLabel(beers);
+console.log(beers);

@@ -4,11 +4,16 @@
  */
 
 const even = function(numbers){
-    
+    let array = [];
+    numbers.map(num => num%2 === 0 ? array.push(num) : '');
+
+    return array;
 }
-
 const odd = function(numbers){
+    let array = [];
+    numbers.map(num => num%2 !== 0 ? array.push(num) : '');
 
+    return array;
 }
 
 // TESTS (no modificar)
